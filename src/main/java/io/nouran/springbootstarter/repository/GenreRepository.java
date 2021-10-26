@@ -5,5 +5,4 @@ import io.nouran.springbootstarter.entities.Genre;
 
 public interface GenreRepository extends CrudRepository<Genre, Integer> {
 	
-	Genre findById(int id);
 }

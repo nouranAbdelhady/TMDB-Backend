@@ -23,6 +23,7 @@ public class MovieReview implements Serializable {
 	@JoinColumn(name = "user_id")
 	private User user;
 
+	//rating = number of starts (from 5)
 	private int rating;
 	private String comment;
 

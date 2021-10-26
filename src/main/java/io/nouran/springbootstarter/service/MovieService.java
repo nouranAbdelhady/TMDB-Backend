@@ -54,13 +54,21 @@ public class MovieService {
             for(TMDBSingleMovie TMDBMovieObject : response.getResults())
             {
                 Movie movie = new Movie(TMDBMovieObject);
-				/*
-				 * for(Integer genreId : TMDBMovieObject.getGenre_ids()) { Optional<Genre> genre
-				 * = genreRepository.findById(genreId); if (genre != null) {
-				 * movie.getGenres().add(genre); } }
+				
+                /*
+				 for(int i=0; i<TMDBMovieObject.getGenre_ids().size() ; i++) 
+				 { 
+					 Genre genre = genreRepository.findById( TMDBMovieObject.getGenre_ids().get(i) ).orElse(null);
+					 
+					 if (genre != null) 
+					 {
+						 movie.getGenres().add(genre); 						
+					 } 
+				 }
 				 */
-                
-                movieRepository.save(movie);   
+				                 
+               
+				 movieRepository.save(movie);   
                 	//pageCount++;
              }
         } 

@@ -1,6 +1,7 @@
 package io.nouran.springbootstarter.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -21,8 +22,9 @@ public class Movie implements Serializable {
 	@Column(name = "poster_path")
 	private String posterPath;
 	
-	@Column(name = "overview")
-	private String overview;
+	//too long
+	//@Column(name = "overview")
+	//private String overview;
 	
 	@Column(name = "release_date")
 	private String releaseDate;
@@ -37,7 +39,7 @@ public class Movie implements Serializable {
 	private int voteAverage;
 	
 	@Column(name = "vote_count")
-	private int voteCount;	
+	private int voteCount;		
     
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
@@ -53,14 +55,14 @@ public class Movie implements Serializable {
 		super();
 	}
 
-	public Movie(int id, String title, String posterPath, String overview,
-			String releaseDate, int popularity, String originalLanguage, int vote_average, int vote_count,
+	public Movie(int id, String title, String posterPath, String releaseDate, 
+			int popularity, String originalLanguage, int vote_average, int vote_count,
 			List<Genre> genres ) {//, List<MovieReview> movieReview) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.posterPath = posterPath;
-		this.overview = overview;
+		//this.overview = overview;
 		this.releaseDate = releaseDate;
 		this.popularity = popularity;
 		this.originalLanguage = originalLanguage;
@@ -81,6 +83,7 @@ public class Movie implements Serializable {
 		this.voteCount = movieObject.getVote_count();
 		this.releaseDate = movieObject.getRelease_date().toString();
 		this.popularity = movieObject.getPopularity();	
+		this.genres = new ArrayList<Genre>();
 	}
 
 	public int getId() {
@@ -105,14 +108,6 @@ public class Movie implements Serializable {
 
 	public void setPosterPath(String posterPath) {
 		this.posterPath = posterPath;
-	}
-	
-	public String getOverview() {
-		return overview;
-	}
-
-	public void setOverview(String overview) {
-		this.overview = overview;
 	}
 
 	public String getReleaseDate() {
@@ -180,7 +175,6 @@ public class Movie implements Serializable {
                 ", title='" + title + '\'' +
                 ", release_date=" + releaseDate + '\'' +                
                 ", poster_path='" + posterPath + '\'' +
-                ", overview='" + overview + '\'' +
                 ", vote_count='" + voteCount + '\'' +
                 ", vote_average='" + voteAverage + '\'' +
                 ", popularity='" + popularity + '\'' +

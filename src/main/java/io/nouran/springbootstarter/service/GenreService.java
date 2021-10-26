@@ -43,7 +43,7 @@ public class GenreService {
     }
 
     public Genre getGenre(int id){
-    	Genre targetedGenre = genreRepository.findById(id);
+    	Genre targetedGenre = genreRepository.findById(id).orElse(null);
 		return targetedGenre;
     }
 
