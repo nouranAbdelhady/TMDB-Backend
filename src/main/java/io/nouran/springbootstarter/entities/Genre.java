@@ -7,7 +7,6 @@ import java.util.List;
 import javax.persistence.*;
 
 import io.nouran.springbootstarter.extra.TMDBGenre;
-import io.nouran.springbootstarter.extra.TMDBSingleMovie;
 
 @Entity
 @Table(name = "genre")
