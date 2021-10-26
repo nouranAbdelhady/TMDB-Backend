@@ -8,8 +8,8 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	@Column(name = "user_id")
-	private long id;
+	@Column(name = "id")
+	private int id;
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -33,10 +33,10 @@ public class User {
 		super();
 	}
 	
-	public User(long id, String firstName, String lastName, int age, String email, String password) {
+	public User(String firstName, String lastName, int age, String email, String password) {
 			//,List<MovieReview> movieReviews) {
 		super();
-		this.id = id;
+		//this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
@@ -45,11 +45,11 @@ public class User {
 		//this.movieReviews = movieReviews;
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
