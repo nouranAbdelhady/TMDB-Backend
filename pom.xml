@@ -1,4 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
+<<<<<<< HEAD
 		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 		  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -14,12 +15,31 @@
   </parent>
 
 	<properties>
+=======
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>TMDB-Backend</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>TMDB-Backend</name>
+
+<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.1.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+  </parent>
+  
+  <properties>
+>>>>>>> 45973dcf20b3eecec7ab854ad020fda38e4ee9e1
 		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
@@ -30,10 +50,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+=======
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+>>>>>>> 45973dcf20b3eecec7ab854ad020fda38e4ee9e1
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+<<<<<<< HEAD
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -41,6 +67,44 @@
 			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
+=======
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20200518</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+		</dependency>
+		
+		<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>8.0.26</version>
+	</dependency>	
+	<dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.4.1.Final</version>
+    </dependency>
+	<dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-entitymanager</artifactId>
+    	<version>5.4.1.Final</version>
+	</dependency>
+	</dependencies>
+	
+>>>>>>> 45973dcf20b3eecec7ab854ad020fda38e4ee9e1
 
 	<build>
 		<plugins>
@@ -50,5 +114,10 @@
 			</plugin>
 		</plugins>
 	</build>
+<<<<<<< HEAD
 
 </project>
+=======
+  
+</project>
+>>>>>>> 45973dcf20b3eecec7ab854ad020fda38e4ee9e1
