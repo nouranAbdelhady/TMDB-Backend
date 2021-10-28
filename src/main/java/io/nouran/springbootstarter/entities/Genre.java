@@ -6,6 +6,10 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import io.nouran.springbootstarter.extra.TMDBGenre;
 
 @Entity
@@ -20,7 +24,8 @@ public class Genre implements Serializable {
 	private String name;
 
 	@ManyToMany(mappedBy = "genres")
-    private List<Movie> movies;
+	@JsonIgnore
+	private List<Movie> movies;
 
 	public Genre() {
 		super();	

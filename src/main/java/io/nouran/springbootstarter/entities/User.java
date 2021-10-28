@@ -1,5 +1,8 @@
 package io.nouran.springbootstarter.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -26,8 +29,8 @@ public class User {
 	@Column(name = "password")
 	private String password;
 		
-	//@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	//private List<MovieReview> movieReviews;
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<MovieReview> movieReviews;
 
 	public User() {
 		super();
@@ -42,7 +45,7 @@ public class User {
 		this.age = age;
 		this.email = email;
 		this.password = password;
-		//this.movieReviews = movieReviews;
+		this.movieReviews = new ArrayList<MovieReview>(); ;
 	}
 
 	public int getId() {
@@ -93,7 +96,6 @@ public class User {
 		this.password = password;
 	}
 
-	/*
 	public List<MovieReview> getMovieReviews() {
 		return movieReviews;
 	}
@@ -101,7 +103,6 @@ public class User {
 	public void setMovieReviews(List<MovieReview> movieReviews) {
 		this.movieReviews = movieReviews;
 	}
-	*/
 	
 	@Override
     public String toString() {

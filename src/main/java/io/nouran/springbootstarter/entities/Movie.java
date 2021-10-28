@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import io.nouran.springbootstarter.extra.TMDBSingleMovie;
 
 @Entity
@@ -48,8 +50,8 @@ public class Movie implements Serializable {
             inverseJoinColumns = @JoinColumn(name = "movie_id"))
     private List<Genre> genres;
 	
-	//@OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	//private List<MovieReview> movieReview;
+	@OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<MovieReview> movieReview;
 
 	public Movie() {
 		super();
@@ -84,6 +86,7 @@ public class Movie implements Serializable {
 		this.releaseDate = movieObject.getRelease_date().toString();
 		this.popularity = movieObject.getPopularity();	
 		this.genres = new ArrayList<Genre>();
+		this.movieReview = new ArrayList<MovieReview>();
 	}
 
 	public int getId() {
@@ -158,7 +161,6 @@ public class Movie implements Serializable {
 		this.genres = genres;
 	}
 
-	/*
 	public List<MovieReview> getMovieReview() {
 		return movieReview;
 	}
@@ -166,7 +168,6 @@ public class Movie implements Serializable {
 	public void setMovieReview(List<MovieReview> movieReview) {
 		this.movieReview = movieReview;
 	}
-	*/
 	
 	@Override
     public String toString() {
@@ -180,7 +181,7 @@ public class Movie implements Serializable {
                 ", popularity='" + popularity + '\'' +
                 ", original_language='" + originalLanguage + '\'' +
                 ", genres='" + genres + '\'' +
-                //", movie_review='" + movieReview + '\'' +
+                ", movie_review='" + movieReview + '\'' +
                 '}';
     }
 }
